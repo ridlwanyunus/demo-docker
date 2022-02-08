@@ -28,6 +28,7 @@ public class ItemLoader implements CommandLineRunner {
 				itemRepository.save(item);
 			}
 			System.out.printf("You have %s records", itemRepository.count());
+			System.out.println("");
 		}
 	}
 
