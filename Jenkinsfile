@@ -21,14 +21,17 @@ pipeline {
             stage("deploy"){
                 steps {
                     echo 'deploying the applications..';
-                    withCredentials([
-                        usernamePassword(
-                            credentials:'docker-demo-pipeline-id',
-                            usernameVariable: USER,
-                            passwordVariable: PWD
-                        )
-                    ]){
-                        echo "my credentials is ${USER} ${PWD}"
+                    withCredentials(
+	                    [
+		                    [ 
+		                    	$class: 'UsernamePasswordMultiBinding',
+		                        credentialsId:'docker-demo-pipeline-id',
+		                        usernameVariable: 'USER',
+		                        passwordVariable: 'PWD'
+		                    ]
+	                    ]
+                    ){
+                        sh 'echo my credentials username = $USER and passowrd = $PWD'
                     }
                 }
             }
