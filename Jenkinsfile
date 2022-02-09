@@ -26,12 +26,12 @@ pipeline {
 		                    [ 
 		                    	$class: 'UsernamePasswordMultiBinding',
 		                        credentialsId:'docker-demo-pipeline-id',
-		                        usernameVariable: 'USER',
-		                        passwordVariable: 'PWD'
+		                        usernameVariable: 'USERNAME',
+		                        passwordVariable: 'PASSWORD'
 		                    ]
 	                    ]
                     ){
-                        sh 'echo my credentials username = $USER and passowrd = $PWD'
+                        sh 'echo my credentials username = $USERNAME and passowrd = $PASSWORD'
                     }
                 }
             }
