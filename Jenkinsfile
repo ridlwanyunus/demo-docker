@@ -22,7 +22,7 @@ pipeline {
                 steps {
                     echo 'deploying the applications..';
                     withCredentials([
-                        usernamePassowrd(
+                        usernamePassword(
                             credentials:'docker-demo-pipeline-id',
                             usernameVariable: USER,
                             passwordVariable: PWD
