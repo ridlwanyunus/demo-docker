@@ -1,6 +1,6 @@
 pipeline {
         agent any
-        environtment{
+        environment{
             NEW_VERSION='1.3.0'
             SERVER_CREDENTIALS = credentials('docker-demo-pipeline-id')
         }
