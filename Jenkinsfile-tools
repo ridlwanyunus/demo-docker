@@ -6,7 +6,7 @@ pipeline {
 	stages {
 		stage("build"){
 			steps {
-				echo 'building the applications using maven..';
+				echo 'building the applications..';
 				sh "mvn install"
 			}
 		}
